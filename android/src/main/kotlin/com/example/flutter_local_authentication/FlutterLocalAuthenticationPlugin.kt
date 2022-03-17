@@ -35,7 +35,6 @@ class FlutterLocalAuthenticationPlugin : FlutterPlugin, MethodCallHandler, Activ
         activity?.let {
             val biometricManager = BiometricManager.from(it)
             return when (biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG
-                    or BiometricManager.Authenticators.DEVICE_CREDENTIAL
                     or BiometricManager.Authenticators.BIOMETRIC_WEAK)) {
               BiometricManager.BIOMETRIC_SUCCESS -> true
                 else -> false
